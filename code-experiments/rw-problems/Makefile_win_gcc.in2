@@ -1,0 +1,29 @@
+##
+## Makefile for the socket_server
+##
+## Evaluators other than toy_socket are compiled only if so indicated with the EVALUATE_* variables.
+## These can be set either by hand or through do.py.
+## 
+
+CCFLAGS = -g -ggdb -std=c89 -pedantic -Wall -Wextra -Wstrict-prototypes -Wshadow -Wno-sign-compare -Wconversion
+LDFLAGS := '-Wl,-rpath,$$ORIGIN'
+
+ifeq ($(OS),Windows_NT)
+	LDFLAGS += -L. -lwsock32
+endif
+
+## rw_top_trumps
+EVALUATE_RW_TOP_TRUMPS = 0
+ifneq ($(EVALUATE_RW_TOP_TRUMPS), 0)
+## Include rw_top_trumps
+	LNAME := rw_top_trumps
+	LDFLAGS += -L. -l$(LNAME)
+endif
+
+all: socket_server
+
+socket_server: socket_server.c
+	$(CC) ${CCFLAGS} socket_server.c -o socket_server ${LDFLAGS} 
+
+clean:
+	del socket_server 2>nul

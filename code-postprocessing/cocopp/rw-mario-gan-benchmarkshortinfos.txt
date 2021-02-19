@@ -1,0 +1,28 @@
+1 enemyDistribution overworld
+2 enemyDistribution underground
+3 positionDistribution overworld
+4 positionDistribution underground
+5 decorationFrequency overworld
+6 decorationFrequency underground
+7 negativeSpace overworld
+8 negativeSpace underground
+9 leniency overworld
+10 leniency underground
+11 basicFitness A* overworld
+12 basicFitness A* underground
+13 basicFitness A* overworld contatenated
+14 basicFitness A* underground concatenated
+15 basicFitness ScaredAgent overworld
+16 basicFitness ScaredAgent underground
+17 airTime A* overworld
+18 airTime A* underground
+19 airTime A* overworld contatenated
+20 airTime A* underground concatenated
+21 airTime ScaredAgent overworld
+22 airTime ScaredAgent underground
+23 timeTaken A* overworld
+24 timeTaken A* underground
+25 timeTaken A* overworld contatenated
+26 timeTaken A* underground concatenated
+27 timeTaken ScaredAgent overworld
+28 timeTaken ScaredAgent underground

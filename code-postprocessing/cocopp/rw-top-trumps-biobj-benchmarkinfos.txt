@@ -1,0 +1,6 @@
+% Direct
+1 Deck HV/Category SD
+
+% Simulation
+2 Win rate/Switches
+3 Win rate/Trick difference
