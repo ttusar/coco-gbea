@@ -132,8 +132,8 @@ if __name__ == '__main__':
         # To use a continuous optimizer, equalize the bounds of integer variables
         num_int = problem.number_of_integer_variables
         if num_int > 0:
-            lb[:num_int] -= 0.5
-            ub[:num_int] += 0.5
+            lb[:num_int] -= (0.5 - 1e-6)
+            ub[:num_int] += (0.5 - 1e-6)
         # Restart the solver while neither the problem is solved nor the budget is exhausted
         while (problem.evaluations < problem.dimension * budget_multiplier
                and not problem.final_target_hit):
