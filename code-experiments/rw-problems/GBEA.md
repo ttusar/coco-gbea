@@ -4,9 +4,9 @@
 Algorithms) is a collection of four suites of real-world benchmark problems based on the Top Trumps 
 and Mario games:
 
-- `rw-top-trumps` and `rw-mario-gan` are single-objective suites containing 10 and 28 functions, 
+- `rw-top-trumps` and `rw-mario-gan` are single-objective suites containing 5 and 28 functions, 
 respectively, and 
-- `rw-top-trumps-biobj` and `rw-mario-gan-biobj` are bi-objective suites containing 3 and 5 functions.
+- `rw-top-trumps-biobj` and `rw-mario-gan-biobj` are bi-objective suites containing 3 and 10 functions.
 
 More informations about the suites can be found at the
 [GBEA website](http://www.gm.fh-koeln.de/~naujoks/gbea/gamesbench_doc.html#abstract), here we give 
