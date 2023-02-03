@@ -101,17 +101,23 @@ def get_experiment_data(suite_name):
     df['out_size'] = -1
     df['status'] = 'Success'
     for batch in df['batch'].tolist():
-        df.loc[df['batch'] == batch, 'out_name'] = batch_out[batch]
-        df.loc[df['batch'] == batch, 'info_size'] = batch_file_size[batch]
-        df.loc[df['batch'] == batch, 'eval_ratio'] = f'{batch_evaluations[batch]:.4f}'
+        try:
+            df.loc[df['batch'] == batch, 'out_name'] = batch_out[batch]
+            df.loc[df['batch'] == batch, 'info_size'] = batch_file_size[batch]
+            df.loc[df['batch'] == batch, 'eval_ratio'] = f'{batch_evaluations[batch]:.4f}'
+        except KeyError:
+            df.loc[df['batch'] == batch, 'status'] = 'Missing'
     for out_name in df['out_name'].tolist():
-        df.loc[df['out_name'] == out_name, 'status'] = out_error[out_name]
-        df.loc[df['out_name'] == out_name, 'out_size'] = out_file_size[out_name]
+        try:
+            df.loc[df['out_name'] == out_name, 'status'] = out_error[out_name]
+            df.loc[df['out_name'] == out_name, 'out_size'] = out_file_size[out_name]
+        except KeyError:
+            continue
     df.to_csv(file_out, index=False)
 
 
 if __name__ == '__main__':
     suite_name = 'rw-mario-gan'
     get_experiment_data(suite_name)
-    suite_name = 'rw-top-trumps'
-    get_experiment_data(suite_name)
+    # suite_name = 'rw-top-trumps'
+    # get_experiment_data(suite_name)
